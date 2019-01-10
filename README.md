@@ -8,7 +8,7 @@ We need to clone git repository, in order to download Apache,PHP,MySQL and PhpMy
 
 To clone git repository run the following command.
 ```
-$ **git clone https://github.com/amarsingh3d/kubernetes-LAMP.git**
+$ git clone https://github.com/amarsingh3d/kubernetes-LAMP.git
 ```
 Clone output would be like this
 ```
@@ -23,7 +23,7 @@ Unpacking objects: 100% (12/12), done.
 Once download finish, change directory
 
 ```
-$ **cd cd kubernetes-LAMP/**
+$ cd cd kubernetes-LAMP/
 ```
 
 **Step-2: Create Apache,PHP,MySQL,PhpMyAdmin Deployment & Service**
@@ -31,7 +31,7 @@ $ **cd cd kubernetes-LAMP/**
 Run command below to create Apache & PHP deployment and Service
 
 ```
-$ **kubectl create -f Apache_PHP_App.yaml**
+$ kubectl create -f Apache_PHP_App.yaml
 
 deployment.extensions/phpdeployment created
 service/phpservice created
@@ -39,7 +39,7 @@ service/phpservice created
 To Create MySQL Deployment and Service run following Command.
 
 ```
-$ **kubectl create -f mysql.yaml**
+$ kubectl create -f mysql.yaml
 
 deployment.extensions/mysqldeploy created
 service/mysql-service created
@@ -47,7 +47,7 @@ service/mysql-service created
 Create PhpMyAdmin pod and service.
 
 ```
-$ **kubectl create -f phpmyadmin.yaml**
+$ kubectl create -f phpmyadmin.yaml
 
 
 service/phpmyadmin created
@@ -59,7 +59,7 @@ pod/phpmyadmin created
 To check service run following command
 
 ```
-$ **kubectl get svc**
+$ kubectl get svc
 
 **NAME**            **TYPE**           **CLUSTER-IP**       **EXTERNAL-IP**                                                               **PORT(S)**          **AGE**
   kubernetes         ClusterIP         10.100.0.1             <none>                                                                        443/TCP              12d
