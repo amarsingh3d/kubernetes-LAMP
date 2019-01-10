@@ -1,4 +1,4 @@
-# How to Setup Lamp Stack on Kubernetes Cluser
+# How to Setup Lamp Stack on EKS Kubernetes Cluser
 
 Let's follow the steps below to create LAMP stack on Kubernetes Cluser
 
@@ -54,7 +54,16 @@ service/phpmyadmin created
 pod/phpmyadmin created
 ```
 
-**Step-3: Validate created Service and pods**
+**Step-3: Validate created Deployment,Service and pods**
+
+To check Deployment
+
+```
+$ kubectl get deployment
+NAME            DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+mysqldeploy     1         1         1            1           30m
+phpdeployment   1         1         1            1           26m
+```
 
 To check service run following command
 
@@ -80,7 +89,7 @@ $ **kubectl get pods -o=wide**
 
 **Test Apache, PHP and PhpMyAdmin access**
 
-Open browser and open phpservice external IP url:
+Open browser and access phpservice external IP url:
 
 http://a145801e314c711e9878e0a7065e7328-1743249526.us-east-1.elb.amazonaws.com/
 
@@ -96,4 +105,49 @@ User: **root**
 
 Password: **redhat**    						// We setup MySQL root password in our Mysql.yaml deployment file.//
 
+**We have successfully setup LAMP stack on EKS Kubernetes cluster.**
+
+**Optional:** Once you have done with LAB, you can delete Service and Deployment.
+
+**To Delete PHP Deployment:**
+
+```
+$ kubectl delete deploy/phpdeployment
+
+deployment.extensions "phpdeployment" deleted
+```
+**To Delete MySQL Deployment:**
+
+```
+$ kubectl delete deploy/mysqldeploy
+
+deployment.extensions "mysqldeploy" deleted
+```
+
+**TO delete PHP Service**
+
+```
+$ kubectl delete svc/phpservice
+
+service "phpservice" deleted
+```
+**TO delete MySQL Service**
+
+```
+$ kubectl delete svc/mysql-service
+service "mysql-service" deleted
+```
+
+**Delete PhpMyAdmin Service**
+```
+$ kubectl delete svc/phpmyadmin
+
+service "phpmyadmin" deleted
+```
+**Delete PhpMyAdmin pod**
+```
+kubectl delete pod/phpmyadmin
+pod "phpmyadmin" deleted
+```
+We have successfully deleted all the deployment, service and pods
 
