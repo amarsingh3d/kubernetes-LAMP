@@ -1,4 +1,4 @@
-#How to Setup Lamp Stack on Kubernetes Cluser
+# How to Setup Lamp Stack on Kubernetes Cluser
 
 Let's follow the steps below to create LAMP stack on Kubernetes Cluser
 
